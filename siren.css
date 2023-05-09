@@ -1,0 +1,109 @@
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Poppins:wght@200;300;400&display=swap');
+
+/* siren */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: rgba(104, 113, 126, 0.404);
+}
+
+body {
+    background: url(noise.png) rgb(22, 24, 26);
+    display: grid;
+    place-items: center;
+}
+
+#siren {
+    width: 400px;
+    height: 400px;
+    background: url(beach.png);
+    background-size: 120%;
+    background-position: center;
+    border: solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-image-source: linear-gradient(105deg, #b1aba2 5%, #3a342b 30%, #b1aba2 50%, white 60%, #b1aba2 90%);
+    transition: 1s ease-out 0.2s;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.527);
+    filter: grayscale(0.2)
+}
+
+#siren:hover {
+    width: 450px;
+    height: 450px;
+    transition: 1s ease-in;
+    background-size: 100%;
+    filter: grayscale(0.5);
+}
+
+.sn_body {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 100%;
+    box-shadow: 0 0 10px white, 0 0 20px 5px white;
+    animation: ghost 1.5s infinite;
+    transition: 0.5s ease-out;
+    border: 0px white;
+    cursor: pointer;
+    opacity: 0.7;
+    overflow: hidden;
+    color: white;
+}
+
+.sn_body::-webkit-scrollbar {
+    display: none
+}
+
+.sn_body * {
+    display: none;
+}
+
+.sn_body:hover * {
+    display: block;
+}
+
+@keyframes ghost {
+    50% {
+        transform: scale(0.7);
+        box-shadow: 0 0 10px 5px white, 0 0 20px 5px white, 0 0 30px 5px white, inset 0 0 10px rgb(180, 199, 199);
+    }
+}
+
+.sn_body:hover {
+    animation: none;
+    opacity: 1;
+    width: 80%;
+    height: 80%;
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.096);
+    border-radius: 0%;
+    transition: 0.5s ease-in;
+    border: 1px solid rgba(255, 255, 255, 0.384);
+    background: none;
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    color: white;
+    text-shadow: 0 0 2px black;
+    overflow: auto;
+}
+
+.sn_body h1 {
+    font-family: 'Gruppo';
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: bolder;
+}
+
+.sn_body p {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 300;
+}
